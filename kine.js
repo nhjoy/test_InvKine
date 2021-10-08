@@ -170,6 +170,19 @@ function gpad(){
         Z_End_Effector = map(Z, -1, 1, -209.5, 209.5);
         
         a = Rumus_IK(X_End_Effector, Y_End_Effector, Z_End_Effector);
+        obj = {
+            X: X_End_Effector,
+            Y: Y_End_Effector,
+            Z: Z_End_Effector,
+            T1: a[0],
+            T2: a[1],
+            T3: a[2],
+            T4: a[3],
+            T5: a[4],
+            T6: a[5],
+        };
+        JSON.stringify(obj);
+        console.log(obj);
         document.getElementById("obj").innerHTML = a;
         document.getElementById("t1").innerHTML = a[0];
         document.getElementById("t2").innerHTML = a[1];
